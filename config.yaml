@@ -1,0 +1,122 @@
+# Configuration for Market Intelligence System
+
+data_collection:
+  target_hashtags:
+    - "#nifty50"
+    - "#sensex"
+    - "#intraday"
+    - "#banknifty"
+  
+  target_tweets: 2000
+  time_window_hours: 24
+  
+  scraping:
+    max_retries: 3
+    retry_delay_seconds: 5
+    batch_size: 50
+    concurrent_workers: 4
+    
+  rate_limiting:
+    requests_per_minute: 60
+    delay_between_requests: 1.5
+    backoff_multiplier: 2
+    max_backoff_time: 300
+
+data_processing:
+  storage:
+    format: "parquet"
+    compression: "snappy"
+    row_group_size: 10000
+    
+  deduplication:
+    hash_algorithm: "xxhash"
+    similarity_threshold: 0.95
+    
+  cleaning:
+    remove_urls: true
+    remove_mentions: false
+    remove_hashtags: false
+    normalize_unicode: true
+    min_content_length: 10
+
+analysis:
+  text_processing:
+    vectorization_method: "tfidf"  # Options: tfidf, word2vec, bert
+    max_features: 10000
+    ngram_range: [1, 2]
+    
+  signal_generation:
+    sentiment_weight: 0.4
+    volume_weight: 0.3
+    engagement_weight: 0.3
+    confidence_threshold: 0.6
+    
+  visualization:
+    max_points_plot: 5000
+    sampling_method: "stratified"
+    figure_dpi: 100
+
+data_processing:
+  storage:
+    format: "parquet"
+    compression: "snappy"
+    partition_by: "date"
+    max_file_size_mb: 100
+    enable_partitioning: true
+    
+  deduplication:
+    method: "hybrid"
+    similarity_threshold: 0.85
+    temporal_window_hours: 6
+    
+  cleaning:
+    remove_html: true
+    normalize_unicode: true
+    remove_extra_whitespace: true
+    handle_emojis: true
+
+performance:
+  memory:
+    chunk_size: 1000
+    max_memory_usage_gb: 4
+    
+  processing:
+    enable_multiprocessing: true
+    max_workers: 8
+    
+  caching:
+    enable_cache: true
+    cache_ttl_hours: 6
+
+analysis:
+  text_processing:
+    vectorization_method: "tfidf"
+    max_features: 10000
+    ngram_range: [1, 2]
+  
+  signal_generation:
+    confidence_threshold: 0.6
+    sentiment_weight: 0.4
+    volume_weight: 0.3
+    engagement_weight: 0.3
+  
+  signal_aggregation:
+    min_confidence: 0.6
+    min_tweets_per_signal: 3
+  
+  visualization:
+    max_data_points: 1000
+    figure_dpi: 100
+
+logging:
+  level: "INFO"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {name}:{function}:{line} | {message}"
+  file_rotation: "10 MB"
+  retention: "7 days"
+
+paths:
+  data_dir: "data"
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  output_dir: "data/output"
+  logs_dir: "logs"

@@ -1,0 +1,27 @@
+# Pipenv
+Pipfile.lock
+.env
+.venv
+Pipfile
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+*.code-workspace
+
+# Local development settings
+.env.local
+.env.*.local
+
+# Logs
+*.log

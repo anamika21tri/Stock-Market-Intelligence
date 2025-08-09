@@ -1,0 +1,70 @@
+================================================================================
+MARKET INTELLIGENCE ANALYSIS REPORT
+================================================================================
+Generated: 2025-08-09 21:14:20
+Analysis Period: 2025-08-09 21:13:56.959709 to 2025-08-09 21:14:20
+
+EXECUTIVE SUMMARY
+----------------------------------------
+• Total Tweets Collected: 20
+• Tweets Processed: 20
+• Trading Signals Generated: 20
+• Processing Time: 0.00 seconds
+
+SIGNAL ANALYSIS SUMMARY
+----------------------------------------
+• Total Signals: 20
+• High Confidence Signals: 17
+• Average Signal Strength: 0.070
+• Average Confidence: 0.705
+
+TRADING RECOMMENDATIONS
+----------------------------------------
+• Overall Score: 0.418
+
+1. MARKET_DIRECTION
+   Description: Neutral bullish signal with 58.8% consistency based on 17 tweets
+   Confidence: 0.573
+
+2. TIME_BASED_15MIN
+   Description: Last 15min: Bullish sentiment with 6 supporting tweets
+
+3. TIME_BASED_1HOUR
+   Description: Last 1hour: Bullish sentiment with 6 supporting tweets
+
+4. HASHTAG_MOMENTUM
+   Description: Strong momentum in #nifty50 with 5 supporting tweets
+
+5. HASHTAG_MOMENTUM
+   Description: Strong momentum in #sensex with 4 supporting tweets
+
+6. HASHTAG_MOMENTUM
+   Description: Strong momentum in #intraday with 4 supporting tweets
+
+RISK ASSESSMENT
+----------------------------------------
+• Risk Level: HIGH
+• Risk Score: 0.900
+• Description: Risk level: HIGH (score: 0.90)
+
+Risk Factors:
+   - High signal volatility detected
+   - Low sentiment consistency
+
+GENERATED VISUALIZATIONS
+----------------------------------------
+• Timeline: reports\signal_timeline_20250809_211418.png
+• Sentiment: reports\sentiment_distribution_20250809_211418.png
+• Hashtags: reports\hashtag_analysis_20250809_211418.png
+
+TECHNICAL DETAILS
+----------------------------------------
+• Data Collection Method: Twitter/X Scraping
+• Text Processing: TF-IDF Vectorization + Sentiment Analysis
+• Signal Generation: Multi-factor Weighted Algorithm
+• Aggregation Windows: 15min, 1hour
+• Confidence Threshold: 0.6
+
+================================================================================
+END OF REPORT
+================================================================================
